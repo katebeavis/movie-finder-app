@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Finder</title>
+  </head>
+    <h1>Movie Finder</h1>
+    <section>
+      <input type="text" placeholder="Enter movie title" class="term" />
+      <button id="submit">Search</button>
+    </section>
+    <section>
+      <h2 class="result"></h2>
+    </section>
+  <body>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+
+      $('#submit').click(function() {
+        var film = $('.term').val();
+
+      $.ajax({
+        dataType: 'json',
+        url: "https://api.themoviedb.org/3/movie/" + film + "?api_key=3be4899b3247be5585404fa14c7413e7",
+      }).done(function(data) {
+        console.log(data.original_title)
+        $('.result').text(data.original_title);
+      });
+    });
+
+    </script>
+  </body>
+</html>
