@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Movie Finder</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
     <h1>Movie Finder</h1>
     <section>
@@ -9,29 +11,26 @@
       <button id="submit">Search</button>
     </section>
     <section>
-      <h1 class="title"></h1>
-      <h2 class="result"></h2>
+      <ul>
+        <li class="title"></li>
+        <li class-"overview"></li>
+        <li class="result"></li>
+      </ul>
     </section>
   <body>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script>
-
       $('#submit').click(function() {
         var film = $('.term').val();
-
-
-
       $.ajax({
         dataType: 'json',
         url: "https://api.themoviedb.org/3/movie/" + film + "?api_key=3be4899b3247be5585404fa14c7413e7",
       }).done(function(data) {
         $('.title').text(data.original_title);
-        $('.result').html("<img src=https://image.tmdb.org/t/p/original" + (data.poster_path) + " />");
+        $('.overview').text(data.overview);
+        $('.result').html("<img id='poster' src=https://image.tmdb.org/t/p/original" + (data.poster_path) + " />");
       });
     });
-
-
-
     </script>
   </body>
 </html>

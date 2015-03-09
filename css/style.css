@@ -1,0 +1,17 @@
+h1 {
+  background-color: red;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+}
+
+section {
+  background-color: red;
+  text-align: center;
+  width: 400px;
+  margin: auto;
+}
+img #poster{
+  height: 425;
+  width: 283;
+}
