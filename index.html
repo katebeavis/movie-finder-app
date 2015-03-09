@@ -9,6 +9,7 @@
       <button id="submit">Search</button>
     </section>
     <section>
+      <h1 class="title"></h1>
       <h2 class="result"></h2>
     </section>
   <body>
@@ -18,14 +19,18 @@
       $('#submit').click(function() {
         var film = $('.term').val();
 
+
+
       $.ajax({
         dataType: 'json',
         url: "https://api.themoviedb.org/3/movie/" + film + "?api_key=3be4899b3247be5585404fa14c7413e7",
       }).done(function(data) {
-        console.log(data.original_title)
-        $('.result').text(data.original_title);
+        $('.title').text(data.original_title);
+        $('.result').html("<img src=https://image.tmdb.org/t/p/original" + (data.poster_path) + " />");
       });
     });
+
+
 
     </script>
   </body>
