@@ -5,7 +5,7 @@ Movie Finder is a one page app that brings in an api from The Movie Database. A 
 I followed a tutorial for this project and the front end is still under construction.
 
 ## Objectives
-To further my understanding of apis and various information can be extracted from them.
+To further my understanding of apis and the various information that can be extracted from them.
 
 ## Technology
 - jQuery
